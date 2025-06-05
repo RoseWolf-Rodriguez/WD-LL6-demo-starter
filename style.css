@@ -267,3 +267,46 @@ textarea.form-control {
   border-top: 1px solid #223A5E;
   color: #222831;
 }
+
+/* RTL support: When the page is in right-to-left mode */
+html[dir="rtl"] body {
+  /* Flip text alignment for RTL */
+  direction: rtl;
+  text-align: right;
+}
+
+/* Flip navbar items for RTL */
+html[dir="rtl"] .navbar-nav {
+  /* Move navbar items to the left in RTL */
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/* Flip testimonial cards for RTL */
+html[dir="rtl"] .testimonial-1 {
+  /* Border and padding on the right for RTL */
+  border-left: none;
+  border-right: 1px solid #eee;
+  padding-left: 0;
+  padding-right: 20px;
+}
+html[dir="rtl"] .testimonial-3 {
+  /* Border and padding on the left for RTL */
+  border-right: none;
+  border-left: 1px solid #eee;
+  padding-right: 0;
+  padding-left: 20px;
+}
+
+/* Flip form labels and inputs for RTL */
+html[dir="rtl"] .form-group label,
+html[dir="rtl"] .form-group input,
+html[dir="rtl"] .form-group textarea,
+html[dir="rtl"] .form-group select {
+  text-align: right;
+}
+
+/* Flip radio buttons for RTL */
+html[dir="rtl"] .form-check {
+  text-align: right;
+}
