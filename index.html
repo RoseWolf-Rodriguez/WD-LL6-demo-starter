@@ -33,7 +33,8 @@
             <a class="nav-link" href="#">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="#">Contact</a>
+            <!-- Add aria-current for accessibility -->
+            <a class="nav-link active" href="#" aria-current="page">Contact</a>
           </li>
         </ul>
       </div>
@@ -41,7 +42,7 @@
   </nav>
 
   <!-- Testimonials Section -->
-  <div class="testimonials-section">
+  <div class="testimonials-section" role="main">
     <div class="container">
       <h2 class="text-center mb-5">Client Testimonials</h2>
       <div class="row testimonials-container">
@@ -50,8 +51,10 @@
           <div class="testimonial-card testimonial-1">
             <div class="testimonial-number">Testimonial 1</div>
             <div class="testimonial-image">
+              <!-- Add descriptive alt text -->
               <img
-                src="https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                src="https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Marie Dubois smiling at her wedding">
             </div>
             <div class="testimonial-content">
               <p class="testimonial-text">"The photos of our wedding are magnificent. Each moment was captured
@@ -67,7 +70,8 @@
           <div class="testimonial-card testimonial-2">
             <div class="testimonial-number">Testimonial 2</div>
             <div class="testimonial-content">
-              <div class="quote-icon mb-3">"</div>
+              <!-- The quote icon is decorative, so use alt="" -->
+              <div class="quote-icon mb-3" aria-hidden="true">"</div>
               <p class="testimonial-text">"The photos of our wedding captured moments that we didn't even know
                 had happened. Exceptional work."</p>
               <p class="testimonial-author">- Carlos & Sofia</p>
@@ -87,8 +91,10 @@
               <p class="testimonial-location">Dubai, United Arab Emirates</p>
             </div>
             <div class="testimonial-image">
+              <!-- Add descriptive alt text -->
               <img
-                src="https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2">
+                src="https://images.pexels.com/photos/265856/pexels-photo-265856.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                alt="Fatima and Mohammed at their event">
             </div>
           </div>
         </div>
@@ -103,45 +109,55 @@
         <!-- Contact Form -->
         <div class="contact-form">
           <h2 class="text-center mb-5">Reach out</h2>
+          <!-- Name input with label -->
           <div class="form-group mb-4">
-            <input type="text" class="form-control" id="name" placeholder="Enter your full name *">
+            <label for="name">Full Name *</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your full name *" aria-required="true">
           </div>
 
+          <!-- Email input with label -->
           <div class="form-group mb-4">
-            <input type="email" class="form-control" id="email" placeholder="example@email.com *">
+            <label for="email">Email *</label>
+            <input type="email" class="form-control" id="email" placeholder="example@email.com *" aria-required="true">
           </div>
 
+          <!-- Session type radio group with label -->
           <div class="form-group mb-4">
             <p class="small-heading">SESSION TYPE *</p>
-            <div class="radio-options">
+            <div class="radio-options" role="radiogroup" aria-labelledby="sessionTypeLabel">
+              <!-- Each radio input has a label for accessibility -->
               <div class="form-check">
-                <input class="form-check-input" type="radio" name="sessionType" id="wedding" value="Wedding">
-                <span class="radio-text">Wedding</span>
+                <input class="form-check-input" type="radio" name="sessionType" id="wedding" value="Wedding" aria-required="true">
+                <label class="radio-text" for="wedding">Wedding</label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="sessionType" id="engagement" value="Engagement">
-                <span class="radio-text">Engagement</span>
+                <label class="radio-text" for="engagement">Engagement</label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="sessionType" id="editorial" value="Editorial">
-                <span class="radio-text">Editorial</span>
+                <label class="radio-text" for="editorial">Editorial</label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="sessionType" id="lifestyle" value="Lifestyle">
-                <span class="radio-text">Lifestyle</span>
+                <label class="radio-text" for="lifestyle">Lifestyle</label>
               </div>
               <div class="form-check">
                 <input class="form-check-input" type="radio" name="sessionType" id="other" value="Other">
-                <span class="radio-text">Other</span>
+                <label class="radio-text" for="other">Other</label>
               </div>
             </div>
           </div>
 
+          <!-- Other info input with label -->
           <div class="form-group mb-4">
+            <label for="otherInfo">Describe your session type</label>
             <input type="text" class="form-control" id="otherInfo" placeholder="Please describe your session type">
           </div>
 
+          <!-- How did you hear about me select with label -->
           <div class="form-group mb-4">
+            <label for="hearAbout">How did you hear about me?</label>
             <select class="form-select" id="hearAbout">
               <option selected disabled>How did you hear about me?</option>
               <option value="google">Google</option>
@@ -152,13 +168,18 @@
             </select>
           </div>
 
+          <!-- Message textarea with label -->
           <div class="form-group mb-4">
+            <label for="message">Message *</label>
             <textarea class="form-control" id="message" rows="5"
-              placeholder="Tell me more about what you're looking for... *"></textarea>
+              placeholder="Tell me more about what you're looking for... *" aria-required="true"></textarea>
           </div>
 
           <div class="text-center mt-4">
-            <button type="submit" class="btn btn-outline-dark"> <i class="bi bi-send"></i> </button>
+            <!-- Add aria-label for accessibility -->
+            <button type="submit" class="btn btn-outline-dark" aria-label="Send message">
+              <i class="bi bi-send" aria-hidden="true"></i>
+            </button>
           </div>
         </div>
       </div>
@@ -188,6 +209,26 @@
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
+
+    // This function checks the current language and sets the page direction
+    function setPageDirection() {
+      // Get the html element
+      var html = document.documentElement;
+      // Get the selected language from the Google Translate cookie
+      var lang = (document.cookie.match(/googtrans=\/[a-z]{2}\/([a-z]{2})/) || [])[1];
+      // If Arabic is selected, set direction to rtl, otherwise ltr
+      if (lang === 'ar') {
+        html.setAttribute('dir', 'rtl'); // Right-to-left for Arabic
+      } else {
+        html.setAttribute('dir', 'ltr'); // Left-to-right for English and others
+      }
+    }
+
+    // Run setPageDirection when the page loads
+    window.addEventListener('load', setPageDirection);
+
+    // Run setPageDirection whenever the user changes the language
+    setInterval(setPageDirection, 1000); // Check every second for changes
   </script>
   <script type="text/javascript"
     src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
